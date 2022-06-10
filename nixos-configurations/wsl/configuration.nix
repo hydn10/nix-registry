@@ -1,9 +1,6 @@
-{ lib, config, nixpkgs, home-manager, pkgs, modulesPath, ... }:
+{ lib, config, pkgs, modulesPath, nixpkgs, home-manager, nixos-wsl, ... }:
 
 with lib;
-let
-  nixos-wsl = import ./nixos-wsl;
-in
 {
   imports = [
     "${modulesPath}/profiles/minimal.nix"
@@ -16,7 +13,7 @@ in
   wsl = {
     enable = true;
     automountPath = "/mnt";
-    defaultUser = "nixos";
+    defaultUser = "hydn";
     startMenuLaunchers = true;
 
     # Enable integration with Docker Desktop (needs to be installed)
