@@ -11,11 +11,11 @@ set sw=2
 set ts=2
 set sts=2
 set cindent
-set tw=80
+set tw=120
 set ft=vim
 
 set background=dark
-"set termguicolors
+set termguicolors
 
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_termcolors=16
@@ -27,15 +27,6 @@ let g:gruvbox_undercurl=1
 
 colorscheme gruvbox
 let g:airline_theme='gruvbox'
-
-
-"TODO: 'nixify' this when packages are mature.
-"They are currently broken in nixpkgs:
-"https://github.com/NixOS/nixpkgs/issues/64560
-"https://github.com/NixOS/nixpkgs/pull/72506
-"let g:coc_global_extensions = [ 'coc-json', 'coc-clangd', 'coc-cmake' ]
-
-
 
 "Json comments syntax highlighting
 "https://github.com/neoclide/coc.nvim/wiki/Using-the-configuration-file
@@ -58,8 +49,8 @@ set updatetime=300
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
+set number
+
 if has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
   set signcolumn=number

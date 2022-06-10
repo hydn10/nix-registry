@@ -4,7 +4,7 @@
   programs.neovim =
   let
     vimrc = builtins.readFile ./vimrc;
-    coc-settings = builtins.readFile ./coc-settings.json;
+    coc-settings = builtins.fromJSON (builtins.readFile ./coc-settings.json);
   in
   {
     enable = true;
@@ -28,6 +28,8 @@
       coc-clangd
       coc-cmake
       coc-json
+
+      vim-lsp-cxx-highlight
     ];
 
     extraConfig = vimrc;

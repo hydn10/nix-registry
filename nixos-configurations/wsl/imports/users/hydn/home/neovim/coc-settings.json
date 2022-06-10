@@ -1,5 +1,6 @@
 {
   "codeLens.enable": false,
+  "coc.preferences.semanticTokensHighlights": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "cpp",
     "hpp",
@@ -23,5 +24,6 @@
   "json.format.enable": true,
 
   "clangd.enabled": true,
+  "clangd.semanticHighlighting": true,
   "clangd.checkUpdates": false
 }

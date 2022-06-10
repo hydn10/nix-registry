@@ -10,13 +10,18 @@
       g = "git";
 
       ls = "exa --group-directories-first";
-      l = "ls -lhg";
+      l = "ls -lahg";
       la = "ls -a";
       lst = "ls -T";
     };
 
     initExtra = ''
       PS1="\[\033[01;00m\][ \[\033[01;32m\]\u\[\033[01;00m\]: \[\033[01;34m\]\w\[\033[01;00m\] \[\033[01;00m\]]\[\033[01;00m\]$ \[\033[00m\]"
+      
+      # Needed in WSL for sessionVariables to work since we don't have a
+      # graphical interface. See [1]:
+      # https://discourse.nixos.org/t/home-manager-doesnt-seem-to-recognize-sessionvariables/8488/7
+      . $HOME/.profile
     '';
 
     sessionVariables = {
