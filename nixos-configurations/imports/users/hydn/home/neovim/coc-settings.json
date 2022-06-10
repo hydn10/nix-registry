@@ -1,0 +1,27 @@
+{
+  "codeLens.enable": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "cpp",
+    "hpp",
+    "cxx",
+    "hxx",
+    "c",
+    "h",
+    "javascript",
+    "typescript",
+    "css",
+    "markdown",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "python"
+  ],
+
+  "json.enable": true,
+  "json.format.enable": true,
+
+  "clangd.enabled": true,
+  "clangd.checkUpdates": false
+}
