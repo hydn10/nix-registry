@@ -11,9 +11,9 @@
         home-manager = inputs.home-manager;
         nixos-wsl = inputs.nixos-wsl;
       in
-      import ./nixos-configurations {
-        inherit self nixpkgs home-manager nixos-wsl;
-      };
+      import ./nixos-configurations { inherit self nixpkgs home-manager nixos-wsl; };
+
+    templates = import ./templates { inherit self; };
   };
 }
 
