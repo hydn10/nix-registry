@@ -6,6 +6,8 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
+    packages = import ./packages { inherit self nixpkgs; };
+
     nixosConfigurations =
       let
         home-manager = inputs.home-manager;
@@ -16,4 +18,3 @@
     templates = import ./templates { inherit self; };
   };
 }
-

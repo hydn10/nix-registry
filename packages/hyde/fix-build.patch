@@ -1,0 +1,27 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 918a271..3dee7e6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -60,7 +60,7 @@ if(DEFINED USE_APPLE_TOOLCHAIN)
+ 
+     set (CLANG_BIN ${XCODE_SELECT}/usr/bin/clang++)
+ else()
+-    set (CLANG_BIN ${CLANG_INSTALL_PREFIX}/bin/clang++)
++    set (CLANG_BIN clang++)
+ endif()
+ 
+ execute_process(COMMAND ${CLANG_BIN} -print-resource-dir
+diff --git a/sources/autodetect.cpp b/sources/autodetect.cpp
+index 539901e..0e0fd67 100644
+--- a/sources/autodetect.cpp
++++ b/sources/autodetect.cpp
+@@ -108,7 +108,8 @@ std::vector<filesystem::path> autodetect_include_paths() {
+     auto temp_a_out = (temp_dir / ("deleteme_" + v)).string();
+     auto command = "echo \"int main() { }\" | clang++ -x c++ -v -o " + temp_a_out + " - 2> " + temp_out;
+ 
+-    std::system(command.c_str());
++    auto discard_ = std::system(command.c_str());
++    (void)discard_;
+ 
+     std::vector lines(file_slurp(temp_out));
+     static const std::string begin_string("#include <...> search starts here:");
