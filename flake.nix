@@ -1,7 +1,10 @@
 {
   inputs = {
     nixpkgs.url = "nixpkgs";
-    home-manager.url = "home-manager";
+    home-manager = {
+      url = "home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
   };
 
