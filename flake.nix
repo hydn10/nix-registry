@@ -8,12 +8,15 @@
   outputs = { self, nixpkgs, ... }@inputs: {
     packages = import ./packages { inherit self nixpkgs; };
 
+    nixosModules = import ./nixos-modules;
+
     nixosConfigurations =
       let
+        system = "x86_64-linux";
         home-manager = inputs.home-manager;
         nixos-wsl = inputs.nixos-wsl;
       in
-      import ./nixos-configurations { inherit self nixpkgs home-manager nixos-wsl; };
+      import ./nixos-configurations { inherit self system nixpkgs home-manager nixos-wsl; };
 
     templates = import ./templates { inherit self; };
   };
