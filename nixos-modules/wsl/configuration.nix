@@ -1,12 +1,9 @@
-{ lib, config, pkgs, modulesPath, nixpkgs, home-manager, nixos-wsl, ... }:
+{ lib, config, pkgs, modulesPath, ... }:
 
 with lib;
 {
   imports = [
     "${modulesPath}/profiles/minimal.nix"
-    nixos-wsl.nixosModules.wsl
-    home-manager.nixosModule
-
     imports/users/hydn
   ];
 

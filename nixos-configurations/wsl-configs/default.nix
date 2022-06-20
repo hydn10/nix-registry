@@ -11,8 +11,9 @@ let
   hostNameToNixosConfig = hn:
     nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit nixpkgs home-manager nixos-wsl; };
       modules = [
+        nixos-wsl.nixosModules.wsl
+        home-manager.nixosModule
         self.nixosModules.wsl
         (mkHostNameModule hn)
       ];
