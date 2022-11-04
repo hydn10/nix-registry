@@ -1,4 +1,4 @@
-﻿set(target myapp)
+﻿set(target myproject)
 
 add_executable(${target}
   src/main.cpp

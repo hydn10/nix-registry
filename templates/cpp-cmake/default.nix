@@ -1,8 +1,10 @@
 { lib, stdenv, cmake }:
 
 let
-  pname = "myproject";
-  version = "0.1.0";
+  vcpkgFile = builtins.fromJSON (builtins.readFile ./vcpkg.json);
+
+  pname = vcpkgFile.name;
+  version = vcpkgFile.version;
 in
   stdenv.mkDerivation
   {
