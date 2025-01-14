@@ -11,7 +11,7 @@
 
   home.packages = with pkgs; [
     ranger
-    exa
+    eza
   ];
 
   nix.registry.hydn.to = {

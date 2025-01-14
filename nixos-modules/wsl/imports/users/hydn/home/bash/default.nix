@@ -9,7 +9,7 @@
       r = "ranger";
       g = "git";
 
-      ls = "exa --group-directories-first";
+      ls = "eza --group-directories-first";
       l = "ls -lahg";
       la = "ls -a";
       lst = "ls -T";
