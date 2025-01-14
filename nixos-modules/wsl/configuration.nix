@@ -9,9 +9,10 @@ with lib;
 
   wsl = {
     enable = true;
-    automountPath = "/mnt";
-    defaultUser = "hydn";
-    startMenuLaunchers = true;
+    # automountPath = "/mnt";
+    wslConf.automount.root = "/mnt";
+    defaultUser = "nixos";
+    #startMenuLaunchers = true;
 
     # Enable integration with Docker Desktop (needs to be installed)
     # docker.enable = true;
